@@ -18,15 +18,21 @@ export class FotoService {
         
     }
 
-    cadastra(foto: FotoComponent) {
+    cadastra(foto: FotoComponent): Observable<Response> {
 
         return this.http
-            .post(this.url, JSON.stringify(foto), { headers: this.headers })
+            .post(this.url, JSON.stringify(foto), { headers: this.headers });
 
     }
 
     lista(): Observable<FotoComponent[]> {
         return this.http.get(this.url)
-        .map(res =>  res.json())
+        .map(res =>  res.json());
+    }
+
+    remove(foto: FotoComponent){
+
+        return this.http.delete(this.url + '/' + foto._id);
+        
     }
  }

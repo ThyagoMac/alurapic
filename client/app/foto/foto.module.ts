@@ -8,4 +8,6 @@ import { FotoService } from './foto.service';
     exports: [ FotoComponent, FiltroPorTitulo ],
     providers: [ FotoService ]
 })
-export class FotoModule{}
+export class FotoModule {
+    
+}
